@@ -83,10 +83,28 @@
                                 center: {lat: 44.540, lng: -78.546},
                                 zoom: 8
                             });
+                            // Try HTML5 geolocation.
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(function(position) {
+                                    var pos = {
+                                        lat: position.coords.latitude,
+                                        lng: position.coords.longitude
+                                    };
+                                    infoWindow.setPosition(pos);
+                                    infoWindow.setContent('Location found.');
+                                    map.setCenter(pos);
+                                }, function() {
+                                    handleLocationError(true, infoWindow, map.getCenter());
+                                });
+                            } else {
+                            // Browser doesn't support Geolocation
+                            handleLocationError(false, infoWindow, map.getCenter());
+                        }
+
 
                                 // NOTE: This uses cross-domain XHR, and may not work on older browsers.
                                 map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/google.json');
-                        }
+                            }
                 </script>
                 <script async defer
                         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClf55i7ai_BLWi1C__3gJsbT6CsLNuzV4&callback=initMap">
