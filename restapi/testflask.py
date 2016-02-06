@@ -24,7 +24,7 @@ dbDataValues = {'0':'streetname',
 				'9':'bathroom',
 				'10':'poollifts',
 				'11':'restaurant',
-				'12':'curbs'
+				'12':'curbs',
 				'13':'shuttle',
 				'14':'lifts',
 				'15':'velcro',
@@ -140,11 +140,6 @@ def searchDBLocation(log, lat):
 #def convertAPIInputToDict():
 	#Given a mysql Request Object
 
-def inputToDict(request):
-
-	for item in request:
-		for dbt in dataItemsList:
-			if item[dbt] != NULL:
 
 
 def addToDB(request):
