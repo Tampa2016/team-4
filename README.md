@@ -8,8 +8,8 @@ Put bugs here
 
 ## credits
 
-  John Astfanous
-  Stephen Astfanous
-  Kevin McKernan
-  Adam Martinez
+  John Astfanous, 
+  Stephen Astfanous, 
+  Kevin McKernan, 
+  Adam Martinez, 
   Daniel Burkholder
