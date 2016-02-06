@@ -53,31 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.php.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/search.php.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="search.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.4650407">
+              <caret line="109" column="14" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="php.old.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php.old.html">
+      <file leaf-file-name="search.php.old" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/search.php.old">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="38.423077">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="111" column="24" selection-start-line="64" selection-start-column="3" selection-end-line="111" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -120,6 +110,7 @@
         <option value="$PROJECT_DIR$/alt/index.html" />
         <option value="$PROJECT_DIR$/alt/Rate.html" />
         <option value="$PROJECT_DIR$/php.html" />
+        <option value="$PROJECT_DIR$/search.php" />
       </list>
     </option>
   </component>
@@ -129,8 +120,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="143" />
-    <option name="y" value="150" />
+    <option name="x" value="468" />
+    <option name="y" value="115" />
     <option name="width" value="1443" />
     <option name="height" value="780" />
   </component>
@@ -257,7 +248,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="143" y="150" width="1443" height="780" extended-state="1" />
+    <frame x="468" y="115" width="1443" height="780" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947442" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -432,26 +423,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php.old.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="38.423077">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search.php.html">
+    <entry file="file://$PROJECT_DIR$/search.php.old">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="111" column="24" selection-start-line="64" selection-start-column="3" selection-end-line="111" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="2.4650407">
+          <caret line="109" column="14" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
           <folding />
         </state>
       </provider>

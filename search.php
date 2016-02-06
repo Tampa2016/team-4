@@ -61,39 +61,54 @@
         <!-- /.container -->
     </nav>
 
-    <div class="container" >
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <?php
-	     $servername = "localhost";
-	     $username = "root";
-	     $password = "code4good";
-	     $dbname = "myDB";
+     <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <h1>The Big Picture</h1>
 
-	     // Create connection
-	     $conn = new mysqli($servername, $username, $password, $dbname);
-	     // Check connection
-	     if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-                }
+    		<?php
 
-                $sql = "SELECT id, firstname, lastname FROM MyGuests";
-                $result = $conn->query($sql);
+    		$servername = "localhost";
+    		$username = "root";
+    		$password = "code4good";
+    		$dbname = "team4";
 
-                if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-                echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-                }
-                } else {
-                echo "0 results";
-                }
-                $conn->close();
-                ?>
+    		$streetname = $_POST["STREETNAME"];
+    		$addressnumber = $_POST["ADDRESSNUMBER"];
+    		$zip = $_POST["ZIP"];
+    		$locationname = $_POST["LOCATIONNAME"];
+    		$rating = $_POST["RATING"];
+
+
+    		$conn = new mysqli($servername, $username, $password, $dbname);
+
+    		if ($conn->connect_error) {
+    		   die("Connection failed: " . $conn->connect_error);
+    		}
+
+
+    		echo $rating;
+
+
+
+    		$sql = "INSERT INTO locations (STREETNAME, ADDRESSNUMBER, ZIP, LOCATIONNAME, RATING) VALUES ('$streetname', $addressnumber, $zip, '$locationname', $rating)";
+
+    		if ($conn->query($sql) === TRUE) {
+      		  echo "New record created successfully";
+    		} else {
+    		    echo "Error: " . $sql . "<br>" . $conn->error;
+    		}
+
+
+    		$conn->close();
+    		?>
+
+
+                </div>
             </div>
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
-    </div>
+        <!-- /.container -->
 
     <!-- Put your page content here! -->
     <div id="map" style="width: 100%; height: 94%; position: absolute; vertical-align:middle;">
