@@ -146,6 +146,7 @@ def addToDB(request):
 	con = accessDB()
 
 	cur = con.cursor()
+	cur.execute("CREATE ")
 
 	#for every arguement supplied, check if it matches the list of possible
 	#valid data types, if it matches, build an insertion query and execute it
@@ -171,9 +172,9 @@ def addToDB(request):
 	namesToInsert += ")"
 	valuesToInsert += ")"
 	
-	query = "INSERT INTO locations"
+	query = "INSERT INTO locations "
 	query += namesToInsert
-	query += " VALUES"
+	query += " VALUES "
 	query += valuesToInsert
 
 	print query
