@@ -91,8 +91,8 @@
                         </tr>
                       </tbody>
                   </table>
-                    <input type="hidden" name="LATITUDE" id="LATITUDE">
-                    <input type="hidden" name="LONGITUDE" id="LONGITUDE">
+                    <input type="hidden" name="LATITUDE" id="lat">
+                    <input type="hidden" name="LONGITUDE" id="long">
                   <p><br>
                       <input type="submit">
                   </p>
@@ -117,9 +117,9 @@
             if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
 
-            var latitude = document.getElementById("LATITUDE");
+            var latitude = document.getElementById("lat");
             latitude = position.coords.latitude;
-            var longitude =  document.getElementById("LONGITUDE")
+            var longitude =  document.getElementById("long")
             longitude = position.coords.longitude;
 
 
