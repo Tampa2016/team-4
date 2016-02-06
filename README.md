@@ -1,10 +1,6 @@
 ## Overview
 
-Table of Contents
-Part I
-Part II
-Part III
-Part IV
+Place stuff here
 
 ## Bugs and Issues
 

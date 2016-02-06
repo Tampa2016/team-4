@@ -51,6 +51,7 @@ dataItemsList = {'streetname',
 
 qq = "SELECT * FROM locations"
 
+#curl http://127.0.0.1:5000/searchLocation?longitude=27.986800173&latitude:-82.328399309
 
 app = Flask(__name__)
 api = Api(app)
