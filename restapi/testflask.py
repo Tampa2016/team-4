@@ -137,13 +137,13 @@ def searchDBLocation(log, lat):
 
 		return results
 
-#def convertAPIInputToDict():
-	#Given a mysql Request Object
+
 
 
 
 def addToDB(request):
-	con = accessDB()
+	#Access MySQL DB given an input query, string
+	con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
 
 	cur = con.cursor()
 	cur.execute("CREATE ")
@@ -161,7 +161,9 @@ def addToDB(request):
 				#con.execute(insertionQueryBuilder(dbt, item[dbt]))
 				namesToInsert += dbt
 				namesToInsert += ", "
+				valuesToInsert += "\'"
 				valuesToInsert += item[dbt]
+				valuesToInsert += "\'"
 				valuesToInsert += ", "
 
 	#remove last comma
