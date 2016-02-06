@@ -21,20 +21,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6025643">
-              <caret line="86" column="114" selection-start-line="86" selection-start-column="110" selection-end-line="86" selection-end-column="114" />
+            <state vertical-scroll-proportion="0.6545226">
+              <caret line="87" column="40" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="google.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/google.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.375">
+            <state vertical-scroll-proportion="83.382355">
               <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
             </state>
@@ -51,8 +51,8 @@
       <list>
         <option value="$PROJECT_DIR$/startbootstrap-the-big-picture-1.0.4/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/startbootstrap-the-big-picture-1.0.4/index.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/google.json" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -209,18 +209,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/google.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6025643">
-          <caret line="86" column="114" selection-start-line="86" selection-start-column="110" selection-end-line="86" selection-end-column="114" />
+        <state vertical-scroll-proportion="83.382355">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/google.json">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.375">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.6545226">
+          <caret line="87" column="40" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="40" />
           <folding />
         </state>
       </provider>

@@ -76,6 +76,7 @@
                 <!-- This is the script for the map -->
                     <div id="map"></div>
                     <script>
+                            var map;
                             function initMap() {
                             var mapDiv = document.getElementById('map');
                             var map = new google.maps.Map(mapDiv, {
@@ -87,13 +88,15 @@
                                 map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/google.json');
                         }
                 </script>
-                <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-                    async defer></script>
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClf55i7ai_BLWi1C__3gJsbT6CsLNuzV4&callback=initMap">
+                </script>
             </div>
         </div>
         <!-- /.row -->
     </div>
     <!-- /.container -->
+
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
