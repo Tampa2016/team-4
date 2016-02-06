@@ -66,12 +66,22 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <h1>The Big Picture</h1>
-		        <form action="/cgi-bin/hello_get.py" method="get">
-	First Name: <input type="text" name="first_name">  <br />
+		       
+		<form action="search.php" method="post">
+		Search: <input type="text" name="query"><br>
+		By: <select name="querytype">
+			<option value="" selected="selected"></option>
+			<option VALUE="STREETNAME">Street Name</option>
+			<option VALUE="ADDRESSNUMBER">Address Number</option>
+			<option VALUE="ZIP">Zip code</option>
+			<option VALUE="LOCATIONNAME">Location</option>
+			<option VALUE="RATING">Rating</option>
+		</select>
+		</form>
+		
+		
 
-	Last Name: <input type="text" name="last_name" />
-	<input type="submit" value="Submit" />
-	</form>
+
             </div>
         </div>
         <!-- /.row -->
