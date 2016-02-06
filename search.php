@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 
 
-$sql = "SELECT $querytype from locations where $querytype = $query";
+$sql = "SELECT * from locations where $querytype = $query";
 
 
 $result = $conn->query($sql);
