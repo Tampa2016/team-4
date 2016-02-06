@@ -103,6 +103,8 @@
                                     handleLocationError(false, infoWindow, map.getCenter());
                                 }     // NOTE: This uses cross-domain XHR, and may not work on older browsers.
                                 map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/google.json');
+                                map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/coords1.json);
+                                map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/coords2.json');
                             }
 
                             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
