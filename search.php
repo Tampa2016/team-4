@@ -92,7 +92,7 @@
 
 
 
-    		$sql = "INSERT INTO locations (STREETNAME, ADDRESSNUMBER, ZIP, LOCATIONNAME, RATING) VALUES ('$streetname', $addressnumber, $zip, '$locationname', $rating)";
+    		$sql = "INSERT INTO locations (STREETNAME, ADDRESSNUMBER, ZIP, LOCATIONNAME, RATING, LATITUDE, LONGITUDE) VALUES ('$streetname', $addressnumber, $zip, '$locationname', $rating, $latitude, $longitude )";
 
     		if ($conn->query($sql) === TRUE) {
       		  echo "New record created successfully";
