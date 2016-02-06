@@ -4,7 +4,7 @@ Table of Contents
 Part I
 Part II
 Part III
-Part IVe
+Part IV
 
 ## Bugs and Issues
 
