@@ -95,6 +95,8 @@
                       <input type="submit">
                   </p>
                     <p>&nbsp;</p>
+                    <input type="hidden" name="LATITUDE" id="LATITUDE">
+                    <input type="hidden" name="LONGITUDE" id="LONGITUDE">
                 </form>
 
 
@@ -108,23 +110,26 @@
     <!-- Put your page content here! -->
     <script type="text/javascript">
 
-    function getLocation() {
+        function getLocation() {
     // Try HTML5 geolocation.
-    if (!navigator.geolocation) {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-    } else {
+            $.post = function (s, param2) {
+                
+            };
+            if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
 
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
-            $.post("search.php", {LATITUDE: latitude});
-            $.post("search.php", {LONGITUDE: longitude});
+            $.post('search.php', {LATITUDE: latitude});
+            $.post('search.php', {LONGITUDE: longitude});
 
 
         }, function () {
             handleLocationError(true, infoWindow, map.getCenter());
         });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
     }     // NOTE: This uses cross-domain XHR, and may not work on older browsers.
     map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/google.json');
     }
