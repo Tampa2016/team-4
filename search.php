@@ -108,7 +108,6 @@
             </div>
             <!-- /.row -->
         </div>
-        <!-- /.container -->
 
     <!-- Put your page content here! -->
     <div id="map" style="width: 100%; height: 94%; position: absolute; vertical-align:middle;">
