@@ -5,7 +5,7 @@ DEBUG = True
 
 import _mysql
 
-db = _mysql.connect()
+db = _mysql.connect(host="localhost", user="root", passwd="code4good", db="locations")
 
 qq = 'SELECT * FROM locations'
 
@@ -21,7 +21,6 @@ class HelloWorld(Resource):
 
 class ConnectDBTest(Resource):
 	def get(self):
-		db.connect()
 
 		db.query(qq)
 
