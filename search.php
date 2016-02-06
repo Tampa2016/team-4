@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "code4good";
-$dbname = "locations";
+$dbname = "team4";
 
 $query = $_POST["query"];
 $querytype = $_POST["querytype"];
