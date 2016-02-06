@@ -40,13 +40,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Locate</a>
+                <a class="navbar-brand" href="index.html">Locate</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="Rate.html">Rate</a>
+                        <a href="#">Rate</a>
                     </li>
                     <li>
                         <a href="#">Services</a>
@@ -63,44 +63,6 @@
 
     <!-- Put your page content here! -->
     <div id="map" style="width: 100%; height: 94%; position: absolute; vertical-align:middle;">
-        <script>
-            var map;
-            function initMap() {
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: -34.397, lng: 150.644},
-                    zoom: 9
-                });
-                var infoWindow = new google.maps.InfoWindow({map: map});
-
-                // Try HTML5 geolocation.
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        var pos = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
-
-                        infoWindow.setPosition(pos);
-                        infoWindow.setContent('Your Here.');
-                        map.setCenter(pos);
-                    }, function() {
-                        handleLocationError(true, infoWindow, map.getCenter());
-                    });
-                } else {
-                    // Browser doesn't support Geolocation
-                    handleLocationError(false, infoWindow, map.getCenter());
-                }     // NOTE: This uses cross-domain XHR, and may not work on older browsers.
-                map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/google.json');
-            }
-
-            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                infoWindow.setPosition(pos);
-                infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-            }
-
-        </script>
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClf55i7ai_BLWi1C__3gJsbT6CsLNuzV4&callback=initMap">
         </script>
