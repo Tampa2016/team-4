@@ -64,7 +64,7 @@
      <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <h1>The Big Picture</h1>
+                    <h1>Thanks For your review</h1>
 
     		<?php
 
@@ -87,7 +87,7 @@
     		}
 
 
-    		echo $rating;
+    		<p>echo $rating;</p>
 
 
 
