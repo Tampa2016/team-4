@@ -42,7 +42,7 @@ class ConnectDBTest(Resource):
 
 def accessDB(inputQuery):
 	con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
-	con.query(nameQuery)
+	con.query(inputQuery)
 
 	return con
 
@@ -129,7 +129,7 @@ def formatJSON(inputResults):
 class SearchByName(Resource):		
 	def get(set):
 		#Example curl request
-		# curl http://127.0.0.1:5000?name=starbucks
+		# curl http://127.0.0.1:5000/searchName?name=starbucks
 
 		#request comes in, grab name varable
 		recvName = request.args['name']
@@ -145,7 +145,7 @@ class SearchByName(Resource):
 #TODO DEBUG MULTIPLE VAR INPUT JSON
 class SearchByLocation(Resource):
 	#Example curl request
-	# curl http://127.0.0.1:5000?longitude=27.986800173&starbucks:latitude=-82.328399309
+	# curl http://127.0.0.1:5000/searchLocation?longitude=27.986800173&latitude:-82.328399309
 	def get(self):
 		longitude = request.args['longitude']
 		latitude = request.args['latitude']
