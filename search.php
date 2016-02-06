@@ -74,8 +74,11 @@
 		$password = "code4good";
 		$dbname = "team4";
 
-		$query = $_POST["query"];
-		$querytype = $_POST["querytype"];
+		$streetname = $_POST["STREETNAME"];
+		$addressnumber = $_POST["ADDRESSNUMBER"];
+		$zip = $_POST["ZIP"];
+		$locationname = $_POST["LOCATIONNAME"];
+		$rating = $_POST["RATING"];
 
 
 		$conn = new mysqli($servername, $username, $password, $dbname);
@@ -85,20 +88,20 @@
 		}
 
 
+		
 
-		$sql = "SELECT * from locations where $querytype = $query";
 
 
-		$result = $conn->query($sql);
+		$sql = "INSERT INTO locations (STREETNAME, ADDRESSNUMBER, ZIP, LOCATIONNAME, RATING)
+			VALUES ($streetname, $addressnumber, $zip, $locationname, $rating)";
 
-		if ($result->num_rows > 0) {
-		    // output data of each row
-		    while($row = $result->fetch_assoc()) {
-			echo "Name: " . $row["LOCATIONNAME"]. "<br>";
-		    }
+		if ($conn->query($sql) === TRUE) {
+  		  echo "New record created successfully";
 		} else {
-		    echo "0 results";
+		    echo "Error: " . $sql . "<br>" . $conn->error;
 		}
+
+		
 		$conn->close();
 		?> 
 
