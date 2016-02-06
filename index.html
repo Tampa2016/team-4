@@ -72,19 +72,6 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 });
 
-                var marker1 = new MarkerWithLabel({
-                    position: homeLatLng,
-                    draggable: true,
-                    raiseOnDrag: true,
-                    map: map,
-                    labelContent: "$425K",
-                    labelAnchor: new google.maps.Point(22, 0),
-                    labelClass: "labels", // the CSS class for the label
-                    labelStyle: {opacity: 0.75},
-                });
-
-
-
                 var infoWindow = new google.maps.InfoWindow({map: map});
 
                 // Try HTML5 geolocation.
