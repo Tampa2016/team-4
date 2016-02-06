@@ -6,7 +6,7 @@ Place stuff here
 
 Put bugs here
 
-## credits
+## Credits
 
   John Astfanous, 
   Stephen Astfanous, 
