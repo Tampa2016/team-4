@@ -62,7 +62,50 @@
     </nav>
 
     <!-- Put your page content here! -->
+    <div id="map" style="width: 100%; height: 90%; position: absolute; vertical-align:middle;">
+        <script>
+            var map;
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 9
+                });
+                var infoWindow = new google.maps.InfoWindow({map: map});
 
+                // Try HTML5 geolocation.
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('Your Here.');
+                        map.setCenter(pos);
+                    }, function() {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }     // NOTE: This uses cross-domain XHR, and may not work on older browsers.
+                map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/google.json');
+                map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/coords1.json);
+                map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/coords2.json');
+            }
+
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+            }
+
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClf55i7ai_BLWi1C__3gJsbT6CsLNuzV4&callback=initMap">
+        </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
