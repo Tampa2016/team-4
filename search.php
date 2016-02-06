@@ -88,7 +88,7 @@
 		}
 
 
-		
+		echo $rating;
 
 
 
