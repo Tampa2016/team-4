@@ -24,6 +24,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- The Map stuff goes here -->
+    <style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
 
 </head>
 
@@ -65,8 +73,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12">
-                <h1>The Big Picture</h1>
-                <p>THIS IS A TEST, consectetur adipisicing elit. Magni, iusto, unde, sunt incidunt id sapiente rerum soluta voluptate harum veniam fuga odit ea pariatur vel eaque sint sequi tenetur eligendi.</p>
+                <!-- This is the script for the map -->
+                <div id="map"></div>
+     				<script src="https://maps.googleapis.com/maps/api/js"
+         			async defer></script>
             </div>
         </div>
         <!-- /.row -->
