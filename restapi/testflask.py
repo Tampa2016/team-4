@@ -51,8 +51,6 @@ dataItemsList = {'streetname',
 
 qq = "SELECT * FROM locations"
 
-#curl http://127.0.0.1:5000/searchLocation?longitude=27.986800173&latitude:-82.328399309
-
 app = Flask(__name__)
 api = Api(app)
 
@@ -183,6 +181,8 @@ def addToDB(request):
 	query += " VALUES"
 	query += valuesToInsert
 
+	print query
+
 	con.execute(query)
 
 
@@ -244,7 +244,10 @@ class SearchByLocation(Resource):
 class AddNewItem(Resource):
 	#Add a new item to the database
 	#CURL example
-	#
+	#longitude=27.986800173&latitude:-82.328399309
+	#curl http://127.0.0.1:5000/searchLocation?streetname=highland&streetnumber=5422&zip=33945&name=Chase&ramp=1&toiletheight=32&poollift=1&shuttle=1
+
+
 	def put(self):
 		addToDB(request)
 
