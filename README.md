@@ -8,6 +8,8 @@ Part IV
 
 ## Bugs and Issues
 
+Custom Markers cause map failure
+
 Put bugs here
 
 ## Credits
