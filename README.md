@@ -4,7 +4,7 @@ Place stuff here
 
 ## Bugs and Issues
 
-Put bugs here
+-Can't place any marker as of now
 
 ## Credits
 
