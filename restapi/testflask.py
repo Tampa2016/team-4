@@ -243,8 +243,7 @@ class AddNewItem(Resource):
 	#Add a new item to the database
 	#CURL example
 	#longitude=27.986800173&latitude:-82.328399309
-	#curl -X PUT -d "streetname=highland" -d "streetnumber=5422" -d "zip=33945" -d "name=Chase" -d "ramp=1" -d "toiletheight=32" -d "poollift=1" -d "shuttle=1" http://127.0.0.1:5000/addNewItem
-
+	# curl -X PUT -d "streetname=highland" -d "streetnumber=5422" -d "zip=33945" -d "name=Chase" -d "ramp=1" -d "toiletheight=32" -d "poollift=1" -d "shuttle=1" http://127.0.0.1:5000/addNewItem
 
 	def put(self):
 		addToDB(request)
