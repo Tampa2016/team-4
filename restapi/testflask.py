@@ -47,8 +47,10 @@ class AddAttributes(Resource):
 class SearchByLocation(Resource):
 	def put(self):
 		#Get location Long / Lat by JSON Object from HTTP PUT Req
-		log = request.form[log]
-		lat = request.form[lat]
+		data = request.form['data']
+
+		log = data.form['log']
+		lat = data.form['lat']
 
 		print log + " " + lat
 
