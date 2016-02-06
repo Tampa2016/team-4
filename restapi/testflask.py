@@ -1,7 +1,7 @@
 #DB Schema
-#0	Streetname		3   name       6	Latitude
-#1  Address Number	4	Rating
-#2  ZIP				5   Longitude
+#0	Streetname		3   name       6	Latitude     	9   Bathroom 	12 	Curbs 		15 	Velco
+#1  Address Number	4	Rating     7	Ramps 			10	Pool Lifts 	13 	Shuttle 	16 	Temp
+#2  ZIP				5   Longitude  8    Toilet Height	11	Restaurant	14 	Lifts		17 	Door Width
 
 from flask import Flask, request
 from flask_restful import Resource, Api
@@ -41,6 +41,7 @@ class ConnectDBTest(Resource):
 		return {'TestDB': 'Successful'}
 
 def accessDB(inputQuery):
+	#Access MySQL DB given an input query, string
 	con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
 	con.query(inputQuery)
 
@@ -54,10 +55,6 @@ def searchDBName(inputName):
 	nameQuery += "\'"
 
 	print nameQuery
-
-
-	#con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
-	#con.query(nameQuery)
 	
 	#Access the DB and store result, return it
 	results = accessDB(nameQuery).store_result()
@@ -72,7 +69,7 @@ def searchDBLocation(log, lat):
 		latSearchPlus = lat + 0.5000
 		latSearchMin = lat - 0.5000
 
-#		locationQuery = "SELECT * from location WHERE ((LONGITUDE BETWEEN " + logSearchPlus + " AND " + logSearchMin ") AND (LATITUDE BETWEEN " + latSearchPlus + " AND " + latSearchMin + "))"
+		#locationQuery = "SELECT * from location WHERE ((LONGITUDE BETWEEN " + logSearchPlus + " AND " + logSearchMin ") AND (LATITUDE BETWEEN " + latSearchPlus + " AND " + latSearchMin + "))"
 
 		#Build the query
 		#Probably uncessary work but tried and true so far so oh well
@@ -100,10 +97,12 @@ def searchDBLocation(log, lat):
 
 		return results
 
+def convertAPIAddToDict():
 
-
+#TODO: Add the new database item tables
 def formatJSON(inputResults):
-
+	#input results from a mysql query
+	#return a json-formatted object
 	rows = inputResults.fetch_row()
 	print rows
 
@@ -140,9 +139,6 @@ class SearchByName(Resource):
 		return json_data
 		
 
-
-
-#TODO DEBUG MULTIPLE VAR INPUT JSON
 class SearchByLocation(Resource):
 	#Example curl request
 	# curl http://127.0.0.1:5000/searchLocation?longitude=27.986800173&latitude:-82.328399309
@@ -157,12 +153,22 @@ class SearchByLocation(Resource):
 
 		return json_data
 
+class AddNewItem(Resource):
+	#Add a new item to the database
+	#CURL example
+	def put(self):
 
 
+
+
+
+#Routing API Declarations
+#e.g. host/searchLocation calls the searchByLocation class
 api.add_resource(HelloWorld, '/')
 api.add_resource(ConnectDBTest, '/DBT')
 api.add_resource(SearchByLocation, '/searchLocation')
 api.add_resource(SearchByName, '/searchName')
+api.add_resource 
 
 if __name__ == '__main__':
 	app.run(debug=True)
