@@ -145,7 +145,7 @@ def searchDBLocation(log, lat):
 def addToDB(request):
 	con = accessDB()
 
-	con = con.cursor()
+	cur = con.cursor()
 
 	#for every arguement supplied, check if it matches the list of possible
 	#valid data types, if it matches, build an insertion query and execute it
@@ -178,7 +178,7 @@ def addToDB(request):
 
 	print query
 
-	con.execute(query)
+	cur.execute(query)
 
 
 
@@ -240,7 +240,7 @@ class AddNewItem(Resource):
 	#Add a new item to the database
 	#CURL example
 	#longitude=27.986800173&latitude:-82.328399309
-	#curl http://127.0.0.1:5000/searchLocation?streetname=highland&streetnumber=5422&zip=33945&name=Chase&ramp=1&toiletheight=32&poollift=1&shuttle=1
+	#curl -X PUT -d "streetname=highland" -d "streetnumber=5422" -d "zip=33945" -d "name=Chase" -d "ramp=1" -d "toiletheight=32" -d "poollift=1" -d "shuttle=1" http://127.0.0.1:5000/addNewItem
 
 
 	def put(self):
