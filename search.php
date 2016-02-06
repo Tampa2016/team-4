@@ -78,7 +78,8 @@
     		$zip = $_POST["ZIP"];
     		$locationname = $_POST["LOCATIONNAME"];
     		$rating = $_POST["RATING"];
-
+            $_GET['latitude'] =  $_POST["LATITUDE"];
+            $_GET['longitude'] =  $_POST["LONGITUDE"];
 
     		$conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -111,10 +112,34 @@
         <!-- /.container -->
 
     <!-- Put your page content here! -->
-    <div id="map" style="width: 100%; height: 94%; position: absolute; vertical-align:middle;">
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClf55i7ai_BLWi1C__3gJsbT6CsLNuzV4&callback=initMap">
-        </script>
+        <script "text/javascript">
+
+                function getLocation() {
+                    // Try HTML5 geolocation.
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function(position) {
+
+                            var latitude = position.coords.latitude;
+                            var longitude = position.coords.longitude;
+
+                        }, function() {
+                            handleLocationError(true, infoWindow, map.getCenter());
+                        });
+                    } else {
+                        // Browser doesn't support Geolocation
+                        handleLocationError(false, infoWindow, map.getCenter());
+                    }     // NOTE: This uses cross-domain XHR, and may not work on older browsers.
+                    map.data.loadGeoJson('http://ec2-54-211-67-125.compute-1.amazonaws.com/google.json');
+                }
+
+                function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent(browserHasGeolocation ?
+                            'Error: The Geolocation service failed.' :
+                            'Error: Your browser doesn\'t support geolocation.');
+                }
+                getLocation();
+            </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
