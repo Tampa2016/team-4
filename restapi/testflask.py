@@ -15,7 +15,7 @@ api = Api(app)
 
 class HelloWorld(Resource):
 	def get(self):
-		log("helloworld")
+		print "helloworld"
 		return {'hello': 'world'}
 
 
@@ -38,11 +38,14 @@ class AddDB(Resource):
 	def get(self):
 
 
+
 class AddAttributes(Resource):
 	def put(self, todo_id):
 
+
+
 class SearchByLocation(Resource):
-	def put(self, location):
+	def put(self):
 		#Get location Long / Lat by JSON Object from HTTP PUT Req
 		log = request.form[log]
 		lat = request.form[lat]
@@ -70,12 +73,14 @@ class SearchByLocation(Resource):
 		return {'TestByLocation': 'Successful'}
 
 
-
+#curl -X PUT -d log=27.980000 -d lat=-82.320000 127.0.0.1:5000/searchLoc
+#curl -X PUT -d log=27.980000 -d lat=-82.320000 127.0.0.1:5000/searchLoc
+#curl -X PUT -H "Content-Type: application/json" -d '{"log":"27.98000"}, {"lat":"-82.32000"}' 127.0.0.1:5000/searchLoc
 
 api.add_resource(HelloWorld, '/')
 api.add_resource(ConnectDBTest, '/DBT')
 api.add_resource(AddDB, '/add')
-api.app_resource(SearchByLocation, '/searchLoc')
+api.add_resource(SearchByLocation, '/searchLoc')
 
 if __name__ == '__main__':
 	app.run(debug=True)
