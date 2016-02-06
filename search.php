@@ -46,10 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Rate</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
+                        <a href="rate.html">Rate</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -92,7 +89,7 @@
 
 
 
-    		$sql = "INSERT INTO locations (STREETNAME, ADDRESSNUMBER, ZIP, LOCATIONNAME, RATING, LATITUDE, LONGITUDE) VALUES ('$streetname', $addressnumber, $zip, '$locationname', $rating, $latitude, $longitude )";
+    		$sql = "INSERT INTO locations (STREETNAME, ADDRESSNUMBER, ZIP, LOCATIONNAME, RATING) VALUES ('$streetname', $addressnumber, $zip, '$locationname', $rating )";
 
     		if ($conn->query($sql) === TRUE) {
       		  echo "New record created successfully";
