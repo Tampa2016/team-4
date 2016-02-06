@@ -12,7 +12,42 @@ DEBUG = True
 
 import _mysql
 
-
+dbDataValues = {'0':'streetname',
+				'1':'streetnumber',
+				'2':'zip',
+				'3':'name',
+				'4':'rating',
+				'5':'longitude',
+				'6':'latitude',
+				'7':'ramp',
+				'8':'toiletheight',
+				'9':'bathroom',
+				'10':'poollifts',
+				'11':'restaurant',
+				'12':'curbs'
+				'13':'shuttle',
+				'14':'lifts',
+				'15':'velcro',
+				'16':'temp',
+				'17':'doorwidth'}
+dataItemsList = {'streetname',
+				'streetnumber',
+				'zip',
+				'name',
+				'rating',
+				'longitude',
+				'latitude',
+				'ramp',
+				'toiletheight',
+				'bathroom',
+				'poollifts',
+				'restaurant',
+				'curbs'
+				'shuttle',
+				'lifts',
+				'velcro',
+				'temp',
+				'doorwidth'}
 
 qq = "SELECT * FROM locations"
 
@@ -44,6 +79,12 @@ def accessDB(inputQuery):
 	#Access MySQL DB given an input query, string
 	con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
 	con.query(inputQuery)
+
+	return con
+
+def accessDB():
+	#Access MySQL DB given an input query, string
+	con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
 
 	return con
 
@@ -97,7 +138,53 @@ def searchDBLocation(log, lat):
 
 		return results
 
-def convertAPIAddToDict():
+#def convertAPIInputToDict():
+	#Given a mysql Request Object
+
+def inputToDict(request):
+
+	for item in request:
+		for dbt in dataItemsList:
+			if item[dbt] != NULL:
+
+
+def addToDB(request):
+	con = accessDB()
+
+	con = con.cursor()
+
+	#for every arguement supplied, check if it matches the list of possible
+	#valid data types, if it matches, build an insertion query and execute it
+	#into the database
+
+	namesToInsert = "("
+	valuesToInsert = "("
+
+	for item in request:
+		for dbt in dataItemsList:
+			if item[dbt] != NULL:
+				#con.execute(insertionQueryBuilder(dbt, item[dbt]))
+				namesToInsert += dbt
+				namesToInsert += ", "
+				valuesToInsert += item[dbt]
+				valuesToInsert += ", "
+
+	#remove last comma
+	namesToInsert = namesToInsert[:-1]
+	valuesToInsert = valuesToInsert[:-1]
+
+	#finish building insertion query
+	namesToInsert += ")"
+	valuesToInsert += ")"
+	
+	query = "INSERT INTO locations"
+	query += namesToInsert
+	query += " VALUES"
+	query += valuesToInsert
+
+	con.execute(query)
+
+
 
 #TODO: Add the new database item tables
 def formatJSON(inputResults):
@@ -156,7 +243,9 @@ class SearchByLocation(Resource):
 class AddNewItem(Resource):
 	#Add a new item to the database
 	#CURL example
+	#
 	def put(self):
+		addToDB(request)
 
 
 
@@ -168,7 +257,7 @@ api.add_resource(HelloWorld, '/')
 api.add_resource(ConnectDBTest, '/DBT')
 api.add_resource(SearchByLocation, '/searchLocation')
 api.add_resource(SearchByName, '/searchName')
-api.add_resource 
+api.add_resource(AddNewItem, '/addNewItem')
 
 if __name__ == '__main__':
 	app.run(debug=True)
