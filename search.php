@@ -13,6 +13,9 @@ if ($conn->connect_error) {
 
 
 $sql = "SELECT $querytype from locations where $querytype=$query";
+
+echo "$sql";
+
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
