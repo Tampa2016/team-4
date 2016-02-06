@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "code4good";
-$dbname = "locations"
+$dbname = "locations";
 
 $query = $_POST["query"];
 $querytype = $_POST["querytype"];
@@ -18,6 +18,7 @@ if ($conn->connect_error) {
 
 
 $sql = "SELECT $querytype from locations where $querytype = $query";
+
 
 $result = $conn->query($sql);
 
