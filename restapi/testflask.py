@@ -37,22 +37,32 @@ class ConnectDBTest(Resource):
 
 
 class SearchByName(Resource):
-	def put(self, name):
-		recvName = request.form['data']
-		data = {}
+	def put(self):
+		print request
+		recvName = request.form['name']
 
-		nameQuery = "SELECT * from location WHERE LOCATIONAME = " + recvName
+		
+		nameQuery = "SELECT * FROM locations WHERE LOCATIONAME = " + recvName
+
 
 		con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
 		con.query(nameQuery)
 
 		results = con.use_result()
 
+		data = {}
+
 		for result in results:
 			data['name'] = result['name']
 			print result['name']
 
 		return data
+
+	#curl --data "param1=value1&param2=value2" https://example.com/resource.cgi
+	#curl --data "name=starbucks" http://127.0.0.1:5000/searchName
+	#curl -X PUT -d arg=val -d arg2=val2 localhost:8080
+	#curl -X PUT -d 'name=starbucks' http://127.0.0.1:5000/searchName
+	#curk http://127.0.0.1:5000/searchName - "data"
 
 #TODO DEBUG MULTIPLE VAR INPUT JSON
 class SearchByLocation(Resource):
