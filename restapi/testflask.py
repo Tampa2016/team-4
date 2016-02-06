@@ -74,7 +74,7 @@ class ConnectDBTest(Resource):
 
 		return {'TestDB': 'Successful'}
 
-def accessDB(inputQuery):
+def accessDBQuery(inputQuery):
 	#Access MySQL DB given an input query, string
 	con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
 	con.query(inputQuery)
@@ -97,7 +97,7 @@ def searchDBName(inputName):
 	print nameQuery
 	
 	#Access the DB and store result, return it
-	results = accessDB(nameQuery).store_result()
+	results = accessDBQuery(nameQuery).store_result()
 
 	return results
 
