@@ -12,9 +12,4 @@ Put bugs here
   Stephen Astfanous, 
   Kevin McKernan, 
   Adam Martinez, 
-  Daniel Burkholdereeeee
-eeee
-eee
-eee
-eee
-eee
+  Daniel Burkholder
