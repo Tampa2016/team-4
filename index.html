@@ -74,9 +74,18 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <!-- This is the script for the map -->
-                <div id="map"></div>
-     				<script src="https://maps.googleapis.com/maps/api/js"
-         			async defer></script>
+                    <div id="map"></div>
+                    <script>
+                            function initMap() {
+                            var mapDiv = document.getElementById('map');
+                            var map = new google.maps.Map(mapDiv, {
+                                center: {lat: 44.540, lng: -78.546},
+                                zoom: 8
+                            });
+                        }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+                    async defer></script>
             </div>
         </div>
         <!-- /.row -->
