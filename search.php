@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 
 
-$sql = "SELECT $querytype from locations where $querytype=$query";
+$sql = "SELECT $querytype from locations where $querytype = $query";
 
 echo "$sql";
 
