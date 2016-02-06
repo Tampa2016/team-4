@@ -63,31 +63,22 @@ class SearchByName(Resource):
 		rows = results.fetch_row()
 		print rows
 
-		data = {}
-		
+		dataItem = {}
 
 		for row in rows: 
-			dataItem = {}
+			dataItem["streetname"] = row[0]
+			dataItem["addressnumber"] = row[1]
+			dataItem["zip"] = row[2]
+			dataItem["name"] = row[3]
+			dataItem["rating"] = row[4]
+			dataItem["longitude"] = row[5]
+			dataItem["latitude"] = row[6]
 
-			dataItem['streetname'] = row[0]
-			dataItem['addressnumber'] = row[1]
-			dataItem['zip'] = row[2]
-			dataItem['name'] = row[3]
-			dataItem['rating'] = row[4]
-			dataItem['longitude'] = row[5]
-			dataItem['latitude'] = row[6]
 
-			json_data = json.dumps(dataItem);
-			data += json_data
 
-		print data
-
-		json_data_final = json.dumps(data)
+		json_data_final = json.dumps(dataItem)
 
 		print json_data_final
-
-		print rows
-
 		return json_data_final
 		
 
