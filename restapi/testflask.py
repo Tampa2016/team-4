@@ -41,7 +41,53 @@ class ConnectDBTest(Resource):
 		return {'TestDB': 'Successful'}
 
 
+def searchDBByName(inputName):
+
+	nameQuery = "SELECT * FROM locations WHERE LOCATIONNAME = "
+	nameQuery += "\'"
+	nameQuery += recvName
+	nameQuery += "\'"
+
+	print nameQuery
+
+
+	con = _mysql.connect(host="localhost", user="root", passwd="code4good", db="team4")
+	con.query(nameQuery)
+
+	results = con.store_result()
+
+	con.close()
+
+	return results
+
+
+
+def formatJSON(inputResults):
+
+	rows = inputResults.fetch_row()
+	print rows
+
+	dataItem = {}
+
+	for row in rows: 
+		dataItem["streetname"] = row[0]
+		dataItem["addressnumber"] = row[1]
+		dataItem["zip"] = row[2]
+		dataItem["name"] = row[3]
+		dataItem["rating"] = row[4]
+		dataItem["longitude"] = row[5]
+		dataItem["latitude"] = row[6]
+
+
+
+	json_data_final = json.dumps(dataItem)
+
+	print json_data_final
+	return json_data_final
+
+
 class SearchByName(Resource):
+	#curl -X PUT -d 'name=starbucks' http://127.0.0.1:5000/searchName
 	def put(self):
 		print request
 		recvName = request.form['name']
@@ -81,13 +127,18 @@ class SearchByName(Resource):
 		print json_data_final
 		return json_data_final
 		
+	def get(set):
+		print request
+		recvName = request.args['name']
+
+		results = searchDBByName(recvName)
+
+		return (formatJSON(results))
+		
 
 
-	#curl --data "param1=value1&param2=value2" https://example.com/resource.cgi
-	#curl --data "name=starbucks" http://127.0.0.1:5000/searchName
-	#curl -X PUT -d arg=val -d arg2=val2 localhost:8080
-	#curl -X PUT -d 'name=starbucks' http://127.0.0.1:5000/searchName
-	#curk http://127.0.0.1:5000/searchName - "data"
+# curl http://127.0.0.1:5000?name=starbucks
+#curl http://127.0.0.1:5000/searchName?name=starbucks
 
 #TODO DEBUG MULTIPLE VAR INPUT JSON
 class SearchByLocation(Resource):
