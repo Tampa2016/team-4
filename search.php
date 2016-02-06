@@ -3,12 +3,13 @@
 $servername = "localhost";
 $username = "root";
 $password = "code4good";
+$dbname = "locations"
 
 $query = $_POST["query"];
 $querytype = $_POST["querytype"];
 
 
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
@@ -17,8 +18,6 @@ if ($conn->connect_error) {
 
 
 $sql = "SELECT $querytype from locations where $querytype = $query";
-
-echo "$sql";
 
 $result = $conn->query($sql);
 
