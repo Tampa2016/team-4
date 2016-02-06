@@ -93,10 +93,7 @@
 		$dwidth = $values[10];
 		
 		
-		for($i=0; $i < 11; $i++)
-		{
-		echo($values[$i]);
-		}
+	
 		
 		
 
