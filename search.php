@@ -78,8 +78,8 @@
     		$zip = $_POST["ZIP"];
     		$locationname = $_POST["LOCATIONNAME"];
     		$rating = $_POST["RATING"];
-            $latitude = $_POST['LATITUDE'];
-            $longitude = $_POST['LONGITUDE'];
+            $latitude = $_POST["LATITUDE"];
+            $longitude = $_POST["LONGITUDE"];
 
     		$conn = new mysqli($servername, $username, $password, $dbname);
 
