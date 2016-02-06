@@ -75,8 +75,31 @@
     		$zip = $_POST["ZIP"];
     		$locationname = $_POST["LOCATIONNAME"];
     		$rating = $_POST["RATING"];
-            $latitude = $_POST["LATITUDE"];
-            $longitude = $_POST["LONGITUDE"];
+           	$latitude = $_POST["LATITUDE"];
+           	$longitude = $_POST["LONGITUDE"];
+
+		$values = $_POST['values'];
+
+		$ramps = $values[0];
+		$theights = $values[1];
+		$bathroom = $values[2];
+		$poollifts = $values[3];
+		$restaurant = $values[4];
+		$curbs = $values[5];
+		$shuttle = $values[6];
+		$lifts = $values[7];
+		$velcro = $values[8];
+		$temp = $values[9];
+		$dwidth = $values[10];
+		
+		
+		for($i=0; $i < 11; $i++)
+		{
+		echo($values[$i]);
+		}
+		
+		
+
 
     		$conn = new mysqli($servername, $username, $password, $dbname);
 
