@@ -46,7 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="Rate.html">Rate</a>
+                        <a href="#">Rate</a>
                     </li>
                     <li>
                         <a href="#">Services</a>
@@ -87,7 +87,7 @@
     		}
 
 
-    		<p>echo $rating;</p>
+    		
 
 
 
@@ -108,6 +108,7 @@
             </div>
             <!-- /.row -->
         </div>
+        <!-- /.container -->
 
     <!-- Put your page content here! -->
     <div id="map" style="width: 100%; height: 94%; position: absolute; vertical-align:middle;">
