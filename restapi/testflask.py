@@ -1,17 +1,36 @@
 from flask import Flask
 from flask_restful import Resource, Api
 
+DEBUG = True
+
+import _mysql
+
+db = _mysql.connect()
+
+qq = 'SELECT * FROM locations'
+
 
 app = Flask(__name__)
 api = Api(app)
 
 class HelloWorld(Resource):
 	def get(self):
+		log("helloworld")
 		return {'hello': 'world'}
 
 
 class ConnectDBTest(Resource):
 	def get(self):
+		db.connect()
+
+		db.query(qq)
+
+		r = db.store_result()
+
+		r.fetch_row(5)
+
+		
+		db.close()
 
 		return {'test': 'db'}
 
