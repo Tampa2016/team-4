@@ -4,6 +4,10 @@ $servername = "localhost";
 $username = "root";
 $password = "code4good";
 
+$query = $_POST["query"];
+$querytype = $_POST["querytype"];
+
+
 $conn = new mysqli($servername, $username, $password);
 
 if ($conn->connect_error) {
